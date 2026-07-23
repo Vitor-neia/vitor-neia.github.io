@@ -6,7 +6,7 @@
     <title>Portfólio Vitor Augusto Neias</title>
 
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="alternate icon" href="favicon.svg">
+    <link rel="alternate icon" href="favicon.svg.svg">
     <meta name="description" content="Portfólio de Vitor Augusto Neias, graduando em Ciência de Dados (FATEC), com projetos de análise exploratória, SQL e dashboards em Power BI. Buscando oportunidade de estágio ou Júnior em Análise de Dados.">
     <meta name="author" content="Vitor Augusto Neias">
 
@@ -39,10 +39,11 @@
     <main id="container">
         
         <aside id="bio-container">
+            <button id="lang-toggle" type="button" aria-label="Switch language / Trocar idioma">EN</button>
             <h2>Vitor Augusto Neias</h2>
             <img id="bio-image" src="img/foto-perfil.jpeg" alt="Vitor Augusto Neias">
-            <p>Olá, meu nome é Vitor Augusto Neias e sou <span class="highlight">Analista e Cientista de dados</span>.</p>
-            <p id="welcome-text">Seja bem-vindo!</p>
+            <p data-pt="Olá, meu nome é Vitor Augusto Neias e sou <span class='highlight'>Analista e Cientista de dados</span>." data-en="Hi, my name is Vitor Augusto Neias and I'm a <span class='highlight'>Data Analyst and Scientist</span>.">Olá, meu nome é Vitor Augusto Neias e sou <span class="highlight">Analista e Cientista de dados</span>.</p>
+            <p id="welcome-text" data-pt="Seja bem-vindo!" data-en="Welcome!">Seja bem-vindo!</p>
             <ul id="social-container">
                <li><a href="https://www.linkedin.com/in/vitor-augusto-neias-278a91210/" target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a></li>
                 <li><a href="https://github.com/Vitor-neia" target="_blank"><i class="devicon-github-original github-icon"></i></a></li>
@@ -54,14 +55,14 @@
             </div>
             <a href="cv1/Curriculo_Vitor_Augusto_estagio.pdf" id="btn-download-cv" download>
                 <ion-icon name="download-outline"></ion-icon>
-                <span>Baixar CV</span>
+                <span data-pt="Baixar CV" data-en="Download CV">Baixar CV</span>
             </a>
         </aside>
  
         <section id="about-container">
             <h1 id="name">Vitor Augusto Neias</h1>
-            <p id="title"><span class="highlight">Analista e Cientista de dados</span></p>
-            <p class="description">
+            <p id="title"><span class="highlight" data-pt="Analista e Cientista de dados" data-en="Data Analyst and Scientist">Analista e Cientista de dados</span></p>
+            <p class="description" data-pt="<strong>Graduando em Ciência de Dados (FATEC) | Buscando Primeira Oportunidade como Analista de Dados</strong><br><br>Estudante de Ciência de Dados com sólida base teórica e focado no desenvolvimento de soluções analíticas práticas. Utilizo ferramentas como SQL (PostgreSQL), Python, Power BI e Excel para extrair, tratar e transformar dados em insights visuais que apoiam a tomada de decisão.<br><br>Mesmo sem experiência corporativa formal, possuo um portfólio consolidado de projetos analíticos que simulam desafios reais de mercado — aplicando técnicas de Análise Exploratória (EDA), limpeza de dados e modelagem financeira. Busco uma oportunidade de estágio ou posição inicial (Júnior) onde possa colaborar com a equipe, aprender rápido e gerar valor desde o primeiro dia." data-en="<strong>Data Science undergraduate (FATEC) | Seeking First Opportunity as a Data Analyst</strong><br><br>Data Science student with a solid theoretical foundation, focused on developing practical analytical solutions. I use tools such as SQL (PostgreSQL), Python, Power BI and Excel to extract, clean and transform data into visual insights that support decision-making.<br><br>Even without formal corporate experience, I have a solid portfolio of analytical projects that simulate real market challenges — applying Exploratory Data Analysis (EDA), data cleaning and financial modeling techniques. I'm looking for an internship or entry-level (Junior) position where I can collaborate with a team, learn fast and add value from day one.">
                 <strong>Graduando em Ciência de Dados (FATEC) | Buscando Primeira Oportunidade como Analista de Dados</strong><br><br>
                 Estudante de Ciência de Dados com sólida base teórica e focado no desenvolvimento de soluções analíticas práticas. Utilizo ferramentas como SQL (PostgreSQL), Python, Power BI e Excel para extrair, tratar e transformar dados em insights visuais que apoiam a tomada de decisão.<br><br>
                 Mesmo sem experiência corporativa formal, possuo um portfólio consolidado de projetos analíticos que simulam desafios reais de mercado — aplicando técnicas de Análise Exploratória (EDA), limpeza de dados e modelagem financeira. Busco uma oportunidade de estágio ou posição inicial (Júnior) onde possa colaborar com a equipe, aprender rápido e gerar valor desde o primeiro dia.
@@ -69,11 +70,11 @@
  
             <a href="https://github.com/Vitor-neia?tab=repositories" id="btn-projects">
                 <ion-icon name="share-social-outline"></ion-icon>
-                <span>Ver Projetos</span>
+                <span data-pt="Ver Projetos" data-en="View Projects">Ver Projetos</span>
             </a>
  
-            <h2 id="projects-section" class="section-title">Meus Projetos</h2>
-            <p class="description">Alguns projetos práticos que desenvolvi aplicando análise exploratória, tratamento de dados e visualização:</p>
+            <h2 id="projects-section" class="section-title" data-pt="Meus Projetos" data-en="My Projects">Meus Projetos</h2>
+            <p class="description" data-pt="Alguns projetos práticos que desenvolvi aplicando análise exploratória, tratamento de dados e visualização:" data-en="Some hands-on projects I built applying exploratory analysis, data wrangling and visualization:">Alguns projetos práticos que desenvolvi aplicando análise exploratória, tratamento de dados e visualização:</p>
  
             <div id="projects-container">
  
@@ -84,8 +85,8 @@
                     
 
                     <div class="project-content">
-                        <h3 class="project-title">Análise do Mercado automotivo — Dashboard Power BI</h3>
-                        <p class="project-description">
+                        <h3 class="project-title" data-pt="Análise do Mercado automotivo — Dashboard Power BI" data-en="Automotive Market Analysis — Power BI Dashboard">Análise do Mercado automotivo — Dashboard Power BI</h3>
+                        <p class="project-description" data-pt="Este projeto demonstra a aplicação prática de linguagem SQL para engenharia de recursos, limpeza de dados (data cleaning) e extração de métricas de negócios a partir de um banco de dados automotivo complexo. Os gráficos e relatórios visuais foram acoplados apenas como um complemento de Business Intelligence para traduzir o resultado das consultas estruturadas em tomadas de decisão executiva." data-en="This project demonstrates the practical application of SQL for feature engineering, data cleaning and extraction of business metrics from a complex automotive database. The charts and visual reports were added only as a Business Intelligence layer to translate the results of structured queries into executive decision-making.">
                             Este projeto demonstra a aplicação prática de linguagem SQL para engenharia de recursos, limpeza de dados (data cleaning) e extração de métricas de negócios a partir de um banco de dados automotivo complexo. Os gráficos e relatórios visuais foram acoplados apenas como um complemento de Business Intelligence para traduzir o resultado das consultas estruturadas em tomadas de decisão executiva.
                         </p>
                         <ul class="project-tags">
@@ -96,11 +97,11 @@
                         <div class="project-links">
                             <a href="https://github.com/Vitor-neia/sql-mercado-automotivo" target="_blank" class="project-btn">
                                 <ion-icon name="logo-github"></ion-icon>
-                                <span>Ver Código</span>
+                                <span data-pt="Ver Código" data-en="View Code">Ver Código</span>
                             </a>
                             <a href="https://app.powerbi.com/links/v_ogmy7plC?ctid=cf72e2bd-7a2b-4783-bdeb-39d57b07f76f&pbi_source=linkShare&bookmarkGuid=23900239-f506-45b2-8019-f3cd78fe69ca" target="_blank" class="project-btn project-btn-outline">
                                 <ion-icon name="bar-chart-outline"></ion-icon>
-                                <span>Ver Dashboard</span>
+                                <span data-pt="Ver Dashboard" data-en="View Dashboard">Ver Dashboard</span>
                             </a>
                         </div>
                     </div>
@@ -111,8 +112,8 @@
                      <img class="project-image" src="img/media_gols.png" alt="Análise exploratória de dados em Python">
 
                     <div class="project-content">
-                        <h3 class="project-title">EDA — Análise Exploratória com Python</h3>
-                        <p class="project-description">
+                        <h3 class="project-title" data-pt="EDA — Análise Exploratória com Python" data-en="EDA — Exploratory Analysis with Python">EDA — Análise Exploratória com Python</h3>
+                        <p class="project-description" data-pt="Análise Exploratória de Dados (EDA) que abrange todos os dados históricos das Copas do Mundo da FIFA. Utilizei Python e suas bibliotecas para análise e visualização (Pandas, NumPy e Matplotlib) para analisar a fundo os dados de cada edição e identificar padrões." data-en="Exploratory Data Analysis (EDA) covering the full historical data of FIFA World Cups. I used Python and its analysis/visualization libraries (Pandas, NumPy and Matplotlib) to dig into each edition's data and identify patterns.">
                              Análise Exploratória de Dados (EDA) que abrange todos os dados históricos das Copas do Mundo da FIFA.
                             Utilizei Python e suas bibliotecas para análise e visualização (Pandas, NumPy e Matplotlib) para analisar a fundo os dados de c Análise Exploratória de Dados (EDA) que abrange todos os dados históricos das Copas do Mundo da FIFA.
                             Utilizei Python e suas bibliotecas para análise e visualização (Pandas, NumPy e Matplotlib) para analisar a fundo os dados de cada edição e identificar padrões.ada edição e identificar padrões.
@@ -126,11 +127,11 @@
                         <div class="project-links">
                             <a href="https://github.com/Vitor-neia/An-lise-Explorat-ria-sobre-Edi-es-de-Copas-do-Mundo" target="_blank" class="project-btn">
                                 <ion-icon name="logo-github"></ion-icon>
-                                <span>Ver Código</span>
+                                <span data-pt="Ver Código" data-en="View Code">Ver Código</span>
                             </a>
                             <a href="study_case.html" class="project-btn project-btn-outline">
                                 <ion-icon name="document-text-outline"></ion-icon>
-                                <span>Estudo de Caso</span>
+                                <span data-pt="Estudo de Caso" data-en="Case Study">Estudo de Caso</span>
                             </a>
                         </div>
                     </div>
@@ -140,8 +141,8 @@
                     <img class="project-image" src="img/consulta sql.PNG" alt="Consultas SQL para análise de dados">
                     
                     <div class="project-content">
-                        <h3 class="project-title">Análise do Mercado Automotivo com  SQL</h3>
-                        <p class="project-description">
+                        <h3 class="project-title" data-pt="Análise do Mercado Automotivo com  SQL" data-en="Automotive Market Analysis with SQL">Análise do Mercado Automotivo com  SQL</h3>
+                        <p class="project-description" data-pt="Construção de consultas em SQLite com agregações e funções de janela para simular relatórios financeiros e responder perguntas de negócio." data-en="Built SQLite queries using aggregations and window functions to simulate financial reports and answer business questions.">
                             Construção de consultas em SQLite com agregações e funções de janela para simular relatórios financeiros e responder perguntas de negócio.
                         </p>
                         <ul class="project-tags">
@@ -152,7 +153,7 @@
                         <div class="project-links">
                             <a href="https://github.com/Vitor-neia/sql-mercado-automotivo" target="_blank" class="project-btn">
                                 <ion-icon name="logo-github"></ion-icon>
-                                <span>Ver Código</span>
+                                <span data-pt="Ver Código" data-en="View Code">Ver Código</span>
                             </a>
                         </div>
                     </div>
@@ -160,8 +161,8 @@
  
             </div>
  
-            <h2 id="skills-section-title">Minha Skills</h2>
-            <p class="description">Conheça as tecnologias que domino:</p>
+            <h2 id="skills-section-title" data-pt="Minha Skills" data-en="My Skills">Minha Skills</h2>
+            <p class="description" data-pt="Conheça as tecnologias que domino:" data-en="Technologies I work with:">Conheça as tecnologias que domino:</p>
             <div id="skills-container">
                 <div class="skills-box">
                     <strong class="skills-title">Hard Skills</strong>
@@ -172,35 +173,35 @@
 
              
                     <ul class="skills-list">
-                        <li><strong>Python:</strong> Desenvolvimento de scripts analíticos utilizando bibliotecas como Pandas e NumPy para manipulação de grandes volumes de dados, e Matplotlib, Seaborn ou Plotly para visualizações dinâmicas e geração de gráficos.</li>
-                        <li><strong>SQL & Bancos de Dados:</strong> Construção de consultas eficientes para extração e filtragem de dados utilizando PostgreSQL, MySQL e SQL Server, aplicando junções (JOINs), agregações (GROUP BY), subqueries e funções de janela.</li>
-                        <li><strong>Power BI:</strong> Criação de dashboards dinâmicos e relatórios interativos. Desenvolvimento de modelagem de dados utilizando o padrão Star Schema, criação de métricas e colunas calculadas com linguagem DAX, e tratamento de dados no Power Query.</li>
-                        <li><strong>Excel:</strong> Tratamento e análise rápida de dados utilizando tabelas dinâmicas, funções avançadas de busca e lógica (PROCV/XLOOKUP, SE/IFS) e criação de gráficos integrados para relatórios executivos.</li>
+                        <li data-pt="<strong>Python:</strong> Desenvolvimento de scripts analíticos utilizando bibliotecas como Pandas e NumPy para manipulação de grandes volumes de dados, e Matplotlib, Seaborn ou Plotly para visualizações dinâmicas e geração de gráficos." data-en="<strong>Python:</strong> Building analytical scripts using libraries like Pandas and NumPy to handle large volumes of data, and Matplotlib, Seaborn or Plotly for dynamic visualizations and charts."><strong>Python:</strong> Desenvolvimento de scripts analíticos utilizando bibliotecas como Pandas e NumPy para manipulação de grandes volumes de dados, e Matplotlib, Seaborn ou Plotly para visualizações dinâmicas e geração de gráficos.</li>
+                        <li data-pt="<strong>SQL & Bancos de Dados:</strong> Construção de consultas eficientes para extração e filtragem de dados utilizando PostgreSQL, MySQL e SQL Server, aplicando junções (JOINs), agregações (GROUP BY), subqueries e funções de janela." data-en="<strong>SQL & Databases:</strong> Building efficient queries to extract and filter data using PostgreSQL, MySQL and SQL Server, applying JOINs, aggregations (GROUP BY), subqueries and window functions."><strong>SQL & Bancos de Dados:</strong> Construção de consultas eficientes para extração e filtragem de dados utilizando PostgreSQL, MySQL e SQL Server, aplicando junções (JOINs), agregações (GROUP BY), subqueries e funções de janela.</li>
+                        <li data-pt="<strong>Power BI:</strong> Criação de dashboards dinâmicos e relatórios interativos. Desenvolvimento de modelagem de dados utilizando o padrão Star Schema, criação de métricas e colunas calculadas com linguagem DAX, e tratamento de dados no Power Query." data-en="<strong>Power BI:</strong> Building dynamic dashboards and interactive reports. Data modeling using the Star Schema pattern, creating metrics and calculated columns with DAX, and data preparation in Power Query."><strong>Power BI:</strong> Criação de dashboards dinâmicos e relatórios interativos. Desenvolvimento de modelagem de dados utilizando o padrão Star Schema, criação de métricas e colunas calculadas com linguagem DAX, e tratamento de dados no Power Query.</li>
+                        <li data-pt="<strong>Excel:</strong> Tratamento e análise rápida de dados utilizando tabelas dinâmicas, funções avançadas de busca e lógica (PROCV/XLOOKUP, SE/IFS) e criação de gráficos integrados para relatórios executivos." data-en="<strong>Excel:</strong> Fast data handling and analysis using pivot tables, advanced lookup and logic functions (VLOOKUP/XLOOKUP, IF/IFS) and built-in charts for executive reports."><strong>Excel:</strong> Tratamento e análise rápida de dados utilizando tabelas dinâmicas, funções avançadas de busca e lógica (PROCV/XLOOKUP, SE/IFS) e criação de gráficos integrados para relatórios executivos.</li>
                     </ul>
                 </div>
                 <div class="skills-box">
-                    <p class="skills-title">Skills de Fundamento</p>
+                    <p class="skills-title" data-pt="Skills de Fundamento" data-en="Foundational Skills">Skills de Fundamento</p>
  
                     <ul class="skills-list">
-                        <li><strong>Tratamento de Dados (Data Wrangling):</strong> Identificação e resolução de inconsistências, como registros duplicados, tratamento de valores ausentes (nulos) e conversão de tipos de variáveis para garantir a integridade da base.</li>
-                        <li><strong>Análise Exploratória de Dados (EDA):</strong> Exploração inicial de novas bases de dados por meio de tabelas de frequência, cruzamento de variáveis e detecção de padrões ocultos ou anomalias (outliers) que direcionam os insights.</li>
-                        <li><strong>Estatística Descritiva:</strong> Aplicação prática de medidas de tendência central (média, mediana, moda) e de dispersão (variância, desvio padrão, quartis) para resumir, compreender e descrever o comportamento dos dados.</li>
+                        <li data-pt="<strong>Tratamento de Dados (Data Wrangling):</strong> Identificação e resolução de inconsistências, como registros duplicados, tratamento de valores ausentes (nulos) e conversão de tipos de variáveis para garantir a integridade da base." data-en="<strong>Data Wrangling:</strong> Identifying and resolving inconsistencies such as duplicate records, handling missing values and converting variable types to ensure data integrity."><strong>Tratamento de Dados (Data Wrangling):</strong> Identificação e resolução de inconsistências, como registros duplicados, tratamento de valores ausentes (nulos) e conversão de tipos de variáveis para garantir a integridade da base.</li>
+                        <li data-pt="<strong>Análise Exploratória de Dados (EDA):</strong> Exploração inicial de novas bases de dados por meio de tabelas de frequência, cruzamento de variáveis e detecção de padrões ocultos ou anomalias (outliers) que direcionam os insights." data-en="<strong>Exploratory Data Analysis (EDA):</strong> Initial exploration of new datasets through frequency tables, cross-tabulation of variables and detection of hidden patterns or anomalies (outliers) that drive insights."><strong>Análise Exploratória de Dados (EDA):</strong> Exploração inicial de novas bases de dados por meio de tabelas de frequência, cruzamento de variáveis e detecção de padrões ocultos ou anomalias (outliers) que direcionam os insights.</li>
+                        <li data-pt="<strong>Estatística Descritiva:</strong> Aplicação prática de medidas de tendência central (média, mediana, moda) e de dispersão (variância, desvio padrão, quartis) para resumir, compreender e descrever o comportamento dos dados." data-en="<strong>Descriptive Statistics:</strong> Practical application of measures of central tendency (mean, median, mode) and dispersion (variance, standard deviation, quartiles) to summarize and describe data behavior."><strong>Estatística Descritiva:</strong> Aplicação prática de medidas de tendência central (média, mediana, moda) e de dispersão (variância, desvio padrão, quartis) para resumir, compreender e descrever o comportamento dos dados.</li>
                     </ul>
                 </div>
             </div>
 
-              <h2 id="education-section-title" class="section-title">Formação &amp; Certificações</h2>
-            <p class="description">Minha trajetória acadêmica e cursos que complementam minha formação:</p>
+              <h2 id="education-section-title" class="section-title" data-pt="Formação &amp; Certificações" data-en="Education &amp; Certifications">Formação &amp; Certificações</h2>
+            <p class="description" data-pt="Minha trajetória acadêmica e cursos que complementam minha formação:" data-en="My academic background and courses that complement my education:">Minha trajetória acadêmica e cursos que complementam minha formação:</p>
  
             <div id="education-container">
  
                 <div class="education-box">
-                    <h3 class="education-subtitle">Formação Acadêmica</h3>
+                    <h3 class="education-subtitle" data-pt="Formação Acadêmica" data-en="Academic Background">Formação Acadêmica</h3>
                     <ul class="education-list">
                         <li class="education-item">
                             <div class="education-item-header">
-                                <strong>Ciência de Dados</strong>
-                                <span class="education-status">Cursando</span>
+                                <strong data-pt="Ciência de Dados" data-en="Data Science">Ciência de Dados</strong>
+                                <span class="education-status" data-pt="Cursando" data-en="In Progress">Cursando</span>
                             </div>
                             <p class="education-institution">FATEC Ourinhos</p>
                         </li>
@@ -208,42 +209,42 @@
                 </div>
  
                 <div class="education-box">
-                    <h3 class="education-subtitle">Cursos &amp; Certificações</h3>
+                    <h3 class="education-subtitle" data-pt="Cursos &amp; Certificações" data-en="Courses &amp; Certifications">Cursos &amp; Certificações</h3>
                     <ul class="certifications-grid">
                         <li class="certification-badge">
                             <ion-icon name="ribbon-outline"></ion-icon>
                             <span>AWS General Immersion Day – Amazon Web Services (AWS), 2026</span>
-                            <p class="certification-provider">Plataforma: AWS</p>
+                            <p class="certification-provider" data-pt="Plataforma: AWS" data-en="Platform: AWS">Plataforma: AWS</p>
                         </li>
                         <li class="certification-badge">
                             <ion-icon name="ribbon-outline"></ion-icon>
                             <span> SQL para Análise de Dados, Teo Me Why</span>
-                            <p class="certification-provider">Plataforma: YouTube</p>
+                            <p class="certification-provider" data-pt="Plataforma: YouTube" data-en="Platform: YouTube">Plataforma: YouTube</p>
                         </li>
                         <li class="certification-badge">
                             <ion-icon name="ribbon-outline"></ion-icon>
                             <span>Power BI Completo: Do Básico ao Avançado — João Paulo de Lira</span>
-                            <p class="certification-provider">Plataforma: Udemy</p>
+                            <p class="certification-provider" data-pt="Plataforma: Udemy" data-en="Platform: Udemy">Plataforma: Udemy</p>
                         </li>
                         <li class="certification-badge">
                             <ion-icon name="ribbon-outline"></ion-icon>
                             <span>Git e GitHub do Básico ao Avançado — Matheus Battisti / Hora de Codar</span>
-                            <p class="certification-provider">Plataforma: Udemy</p>
+                            <p class="certification-provider" data-pt="Plataforma: Udemy" data-en="Platform: Udemy">Plataforma: Udemy</p>
                         </li>
                         <li class="certification-badge">
                             <ion-icon name="ribbon-outline"></ion-icon>
                             <span>Curso de Python — Curso em Vídeo (Prof. Gustavo Guanabara)</span>
-                            <p class="certification-provider">Plataforma: YouTube</p>
+                            <p class="certification-provider" data-pt="Plataforma: YouTube" data-en="Platform: YouTube">Plataforma: YouTube</p>
                         </li>
                         <li class="certification-badge">
                             <ion-icon name="ribbon-outline"></ion-icon>
                             <span>Curso de Excel Completo: Do Básico ao Avançado — Nelio Alves</span>
-                            <p class="certification-provider">Plataforma: Udemy</p>
+                            <p class="certification-provider" data-pt="Plataforma: Udemy" data-en="Platform: Udemy">Plataforma: Udemy</p>
                         </li>
                         <li class="certification-badge">
                             <ion-icon name="ribbon-outline"></ion-icon>
                             <span>Python para Análise de Dados — Data V / Odemir Depieri Jr</span>
-                            <p class="certification-provider">Plataforma: Udemy</p>
+                            <p class="certification-provider" data-pt="Plataforma: Udemy" data-en="Platform: Udemy">Plataforma: Udemy</p>
                         </li>
 
                     </ul>
