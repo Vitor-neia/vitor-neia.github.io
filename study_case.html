@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estudo de Caso: EDA Copas do Mundo — Vitor Augusto Neias</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="alternate icon" href="favicon.svg">
  
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,15 +18,17 @@
 <body class="case-study-page">
     <main id="case-study-container">
  
+        <button id="lang-toggle" type="button" aria-label="Switch language / Trocar idioma">EN</button>
+
         <a href="index.html" id="btn-back">
             <ion-icon name="arrow-back-outline"></ion-icon>
-            <span>Voltar ao portfólio</span>
+            <span data-pt="Voltar ao portfólio" data-en="Back to portfolio">Voltar ao portfólio</span>
         </a>
  
         <header class="case-header">
-            <span class="case-tag">Estudo de Caso</span>
-            <h1>Análise Exploratória sobre as Edições da Copa do Mundo</h1>
-            <p class="case-subtitle">Explorando 22 edições do maior torneio de futebol do planeta para entender padrões de títulos, o "fator casa" e a evolução tática do jogo ao longo de quase um século.</p>
+            <span class="case-tag" data-pt="Estudo de Caso" data-en="Case Study">Estudo de Caso</span>
+            <h1 data-pt="Análise Exploratória sobre as Edições da Copa do Mundo" data-en="Exploratory Analysis of FIFA World Cup Editions">Análise Exploratória sobre as Edições da Copa do Mundo</h1>
+            <p class="case-subtitle" data-pt='Explorando 22 edições do maior torneio de futebol do planeta para entender padrões de títulos, o "fator casa" e a evolução tática do jogo ao longo de quase um século.' data-en='Exploring 22 editions of the biggest football tournament on the planet to understand title patterns, the "home advantage" and the tactical evolution of the game over almost a century.'>Explorando 22 edições do maior torneio de futebol do planeta para entender padrões de títulos, o "fator casa" e a evolução tática do jogo ao longo de quase um século.</p>
             <ul class="project-tags case-tags">
                 <li>Python</li>
                 <li>Pandas</li>
@@ -34,14 +38,14 @@
             <div class="case-header-links">
                 <a href="https://github.com/Vitor-neia/An-lise-Explorat-ria-sobre-Edi-es-de-Copas-do-Mundo" target="_blank" class="project-btn">
                     <ion-icon name="logo-github"></ion-icon>
-                    <span>Ver Repositório</span>
+                    <span data-pt="Ver Repositório" data-en="View Repository">Ver Repositório</span>
                 </a>
             </div>
         </header>
  
         <section class="case-section">
-            <h2><span class="case-number">01</span> Contexto do Problema</h2>
-            <p>
+            <h2><span class="case-number">01</span> <span data-pt="Contexto do Problema" data-en="Problem Context">Contexto do Problema</span></h2>
+            <p data-pt="A Copa do Mundo é disputada desde 1930 e acumula quase um século de histórico. Apesar de ser amplamente comentada, boa parte dessa informação está espalhada e pouco estruturada. O objetivo deste projeto foi consolidar os dados de todas as edições do torneio em uma única base para responder perguntas concretas: quais seleções realmente dominam o cenário mundial? Jogar em casa é, de fato, uma vantagem? A média de gols por partida mudou ao longo das décadas? E qual edição teve o maior público da história?" data-en="The World Cup has been played since 1930 and holds almost a century of history. Despite being widely discussed, much of this information is scattered and poorly structured. The goal of this project was to consolidate the data from every edition of the tournament into a single dataset to answer concrete questions: which teams truly dominate the world stage? Is playing at home really an advantage? Has the average number of goals per match changed over the decades? And which edition had the largest crowds in history?">
                 A Copa do Mundo é disputada desde 1930 e acumula quase um século de histórico. Apesar de ser
                 amplamente comentada, boa parte dessa informação está espalhada e pouco estruturada. O objetivo
                 deste projeto foi consolidar os dados de todas as edições do torneio em uma única base para
@@ -52,7 +56,7 @@
         </section>
  
         <section class="case-section">
-            <h2><span class="case-number">02</span> Dados Utilizados</h2>
+            <h2><span class="case-number">02</span> <span data-pt="Dados Utilizados" data-en="Data Used">Dados Utilizados</span></h2>
             <p>
                 A base (<code>worldcups_atualizado.csv</code>) reúne uma linha para cada uma das 22 edições da
                 Copa do Mundo, com colunas de ano, país-sede, campeão, vice-campeão, terceiro e quarto colocados,
@@ -61,21 +65,21 @@
             <div class="case-stats-grid">
                 <div class="case-stat">
                     <strong>22</strong>
-                    <span>Edições analisadas (1930–2022)</span>
+                    <span data-pt="Edições analisadas (1930–2022)" data-en="Editions analyzed (1930–2022)">Edições analisadas (1930–2022)</span>
                 </div>
                 <div class="case-stat">
                     <strong>10</strong>
-                    <span>Colunas na base original</span>
+                    <span data-pt="Colunas na base original" data-en="Columns in the original dataset">Colunas na base original</span>
                 </div>
                 <div class="case-stat">
                     <strong>0</strong>
-                    <span>Valores nulos encontrados</span>
+                    <span data-pt="Valores nulos encontrados" data-en="Missing values found">Valores nulos encontrados</span>
                 </div>
             </div>
         </section>
  
         <section class="case-section">
-            <h2><span class="case-number">03</span> Processo de Limpeza e EDA</h2>
+            <h2><span class="case-number">03</span> <span data-pt="Processo de Limpeza e EDA" data-en="Cleaning and EDA Process">Processo de Limpeza e EDA</span></h2>
             <p>
                 O processo começou com uma inspeção geral da base usando <code>df.info()</code>,
                 <code>df.isnull().sum()</code> e <code>df.describe()</code>, para confirmar tipos de dados e
@@ -99,7 +103,7 @@
         </section>
  
         <section class="case-section">
-            <h2><span class="case-number">04</span> Decisões Tomadas</h2>
+            <h2><span class="case-number">04</span> <span data-pt="Decisões Tomadas" data-en="Decisions Made">Decisões Tomadas</span></h2>
             <p>
                 Para o ranking de campeões e vice-campeões, optei por gráficos de barras horizontais
                 (<code>barh</code>), que facilitam a leitura de nomes de países longos sem sobrepor rótulos.
@@ -131,7 +135,7 @@
         </section>
  
         <section class="case-section">
-            <h2><span class="case-number">05</span> Resultado e Insight Final</h2>
+            <h2><span class="case-number">05</span> <span data-pt="Resultado e Insight Final" data-en="Result and Final Insight">Resultado e Insight Final</span></h2>
             <p>
                 O <strong>Brasil</strong> se confirmou como a seleção com mais títulos da história (5), embora
                 esteja sem vencer desde 2002 — a Alemanha vem logo atrás, com 4 títulos, sendo o último em 2014,
@@ -152,7 +156,7 @@
                 Por fim, a <strong>Copa de 1994, nos Estados Unidos</strong>, segue como o maior evento em público
                 médio por jogo da história do torneio, enquanto a Copa de 1934, na Itália, registrou o menor público
                 médio.
-            </p> 
+            </p>
             <p>
                 Esse projeto reforça como dados históricos bem tratados — mesmo em uma base relativamente simples —
                 revelam padrões estruturais (dominância, vantagem de mando de campo, evolução tática) que não são
@@ -163,12 +167,45 @@
  
         <a href="index.html" id="btn-back-bottom">
             <ion-icon name="arrow-back-outline"></ion-icon>
-            <span>Voltar ao portfólio</span>
+            <span data-pt="Voltar ao portfólio" data-en="Back to portfolio">Voltar ao portfólio</span>
         </a>
  
     </main>
  
     <script type="module" src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.js"></script>
+
+    <script>
+        (function () {
+            var STORAGE_KEY = 'portfolio-lang';
+            var toggleBtn = document.getElementById('lang-toggle');
+            var elements = document.querySelectorAll('[data-pt]');
+
+            function applyLanguage(lang) {
+                elements.forEach(function (el) {
+                    var text = el.getAttribute('data-' + lang);
+                    if (text !== null) {
+                        el.innerHTML = text;
+                    }
+                });
+                document.documentElement.setAttribute('lang', lang === 'en' ? 'en' : 'pt-BR');
+                if (toggleBtn) {
+                    toggleBtn.textContent = (lang === 'en') ? 'PT' : 'EN';
+                }
+                try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) { /* ignora se bloqueado */ }
+            }
+
+            var currentLang = 'pt';
+            try { currentLang = localStorage.getItem(STORAGE_KEY) || 'pt'; } catch (e) { /* ignora se bloqueado */ }
+            applyLanguage(currentLang);
+
+            if (toggleBtn) {
+                toggleBtn.addEventListener('click', function () {
+                    currentLang = (currentLang === 'pt') ? 'en' : 'pt';
+                    applyLanguage(currentLang);
+                });
+            }
+        })();
+    </script>
 </body>
 </html>
