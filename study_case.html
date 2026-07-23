@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudo de Caso: EDA Copas do Mundo — Vitor Augusto Neias</title>
+ 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+ 
+    <!-- Css do Projeto -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="case-study-page">
+    <main id="case-study-container">
+ 
+        <a href="index.html" id="btn-back">
+            <ion-icon name="arrow-back-outline"></ion-icon>
+            <span>Voltar ao portfólio</span>
+        </a>
+ 
+        <header class="case-header">
+            <span class="case-tag">Estudo de Caso</span>
+            <h1>Análise Exploratória sobre as Edições da Copa do Mundo</h1>
+            <p class="case-subtitle">Explorando 22 edições do maior torneio de futebol do planeta para entender padrões de títulos, o "fator casa" e a evolução tática do jogo ao longo de quase um século.</p>
+            <ul class="project-tags case-tags">
+                <li>Python</li>
+                <li>Pandas</li>
+                <li>NumPy</li>
+                <li>Matplotlib</li>
+            </ul>
+            <div class="case-header-links">
+                <a href="https://github.com/Vitor-neia/An-lise-Explorat-ria-sobre-Edi-es-de-Copas-do-Mundo" target="_blank" class="project-btn">
+                    <ion-icon name="logo-github"></ion-icon>
+                    <span>Ver Repositório</span>
+                </a>
+            </div>
+        </header>
+ 
+        <section class="case-section">
+            <h2><span class="case-number">01</span> Contexto do Problema</h2>
+            <p>
+                A Copa do Mundo é disputada desde 1930 e acumula quase um século de histórico. Apesar de ser
+                amplamente comentada, boa parte dessa informação está espalhada e pouco estruturada. O objetivo
+                deste projeto foi consolidar os dados de todas as edições do torneio em uma única base para
+                responder perguntas concretas: quais seleções realmente dominam o cenário mundial? Jogar em casa
+                é, de fato, uma vantagem? A média de gols por partida mudou ao longo das décadas? E qual edição
+                teve o maior público da história?
+            </p>
+        </section>
+ 
+        <section class="case-section">
+            <h2><span class="case-number">02</span> Dados Utilizados</h2>
+            <p>
+                A base (<code>worldcups_atualizado.csv</code>) reúne uma linha para cada uma das 22 edições da
+                Copa do Mundo, com colunas de ano, país-sede, campeão, vice-campeão, terceiro e quarto colocados,
+                total de gols marcados, número de seleções participantes, número de jogos disputados e público total.
+            </p>
+            <div class="case-stats-grid">
+                <div class="case-stat">
+                    <strong>22</strong>
+                    <span>Edições analisadas (1930–2022)</span>
+                </div>
+                <div class="case-stat">
+                    <strong>10</strong>
+                    <span>Colunas na base original</span>
+                </div>
+                <div class="case-stat">
+                    <strong>0</strong>
+                    <span>Valores nulos encontrados</span>
+                </div>
+            </div>
+        </section>
+ 
+        <section class="case-section">
+            <h2><span class="case-number">03</span> Processo de Limpeza e EDA</h2>
+            <p>
+                O processo começou com uma inspeção geral da base usando <code>df.info()</code>,
+                <code>df.isnull().sum()</code> e <code>df.describe()</code>, para confirmar tipos de dados e
+                garantir que não havia valores ausentes.
+            </p>
+            <p>
+                Um ponto de atenção identificado foi que a Alemanha aparecia registrada de duas formas diferentes
+                no histórico ("West Germany" e "Germany"), o que distorceria a contagem de títulos por seleção.
+                Esse problema foi corrigido consolidando os dois nomes em um único rótulo:
+            </p>
+            <ul class="case-list">
+                <li>Padronização de nomes de seleção (<code>df.replace({'West Germany': 'Germany'})</code>), unificando o histórico alemão.</li>
+                <li>Contagem de frequência com <code>value_counts()</code> para campeões, vices e países-sede.</li>
+                <li>Criação de métricas derivadas: média de gols por jogo (<code>goals_scored / games</code>) e média de público por jogo (<code>attendance / games</code>).</li>
+                <li>Criação de uma função customizada (<code>desempenho_sede</code>) para classificar, em cada edição, se o país-sede terminou como campeão, vice, 3º, 4º lugar ou fora do pódio.</li>
+            </ul>
+            <p>
+                A partir desses dados tratados, os principais gráficos foram construídos com Matplotlib para
+                visualizar tendências de título, gols e público ao longo do tempo.
+            </p>
+        </section>
+ 
+        <section class="case-section">
+            <h2><span class="case-number">04</span> Decisões Tomadas</h2>
+            <p>
+                Para o ranking de campeões e vice-campeões, optei por gráficos de barras horizontais
+                (<code>barh</code>), que facilitam a leitura de nomes de países longos sem sobrepor rótulos.
+            <p class="case-image-caption">Ranking das seleções com mais títulos de Copa do Mundo.</p>
+            <img class="case-image" src="img/top_campeoes.png" alt="Gráfico de barras com as seleções com mais títulos de Copa do Mundo">
+            <p class="case-image-caption">Ranking das seleções com mais vices de Copa do Mundo.</p>
+            <img class="case-image" src="img/selecoes_vices.png" alt="'Gráfico de barras com as seleçoes que mais possuem vices">
+        
+ 
+            <p>
+                Para a evolução da média de gols e da média de público ao longo dos anos, usei gráficos de
+                linha — a melhor forma de representar uma tendência temporal — com anotações (<code>plt.annotate</code>)
+                destacando os pontos de máximo e mínimo de cada métrica, para tornar os extremos históricos
+                imediatamente visíveis sem precisar consultar a tabela.
+            </p>
+            <p class="case-image-caption">Média de gols por partida ao longo das edições da Copa do Mundo, com destaque para o maior e o menor valor histórico.</p>
+            <img class="case-image" src="img/media_gols.png" alt="Gráfico de linha da média de gols por edição da Copa do Mundo">
+            <p class="case-image-caption">Média de público por partida ao longo das edições da Copa do Mundo, com destaque para o maior e o menor valor histórico.</p>
+            <img class="case-image" src="img/media_publico.png" alt="Gráfico de linha da média de público edição da Copa do Mundo">
+ 
+            <p>
+                Já para investigar o "fator casa", criei uma função própria que classifica o desempenho do
+                país-sede em cada edição (campeão, vice, 3º, 4º lugar ou fora do pódio) e visualizei o resultado
+                em um gráfico de barras coloridas por posição, facilitando a leitura da frequência de cada resultado.
+            </p>
+            <p class="case-image-caption">Desempenho do país-sede em cada edição da Copa do Mundo.</p>
+            <img class="case-image" src="img/pais_sede.png"" alt="Gráfico de barras do desempenho do país-sede na Copa do Mundo">
+            
+        </section>
+ 
+        <section class="case-section">
+            <h2><span class="case-number">05</span> Resultado e Insight Final</h2>
+            <p>
+                O <strong>Brasil</strong> se confirmou como a seleção com mais títulos da história (5), embora
+                esteja sem vencer desde 2002 — a Alemanha vem logo atrás, com 4 títulos, sendo o último em 2014,
+                justamente em solo brasileiro.
+            </p>
+            <p>
+                O <strong>"fator casa"</strong> se mostrou historicamente relevante: seleções tradicionais como
+                Uruguai, Itália, Inglaterra, Alemanha, Argentina e França conquistaram o título jogando diante de
+                sua própria torcida, reforçando a vantagem competitiva de sediar o torneio.
+            </p>
+            <p>
+                Do ponto de vista tático, ficou evidente uma <strong>queda expressiva na média de gols por
+                partida a partir dos anos 2000</strong> — o pico histórico foi em 1954 (5,38 gols/jogo) e o menor
+                valor em 1990 (2,21 gols/jogo) — refletindo a crescente profissionalização e o rigor defensivo do
+                futebol moderno.
+            </p>
+            <p>
+                Por fim, a <strong>Copa de 1994, nos Estados Unidos</strong>, segue como o maior evento em público
+                médio por jogo da história do torneio, enquanto a Copa de 1934, na Itália, registrou o menor público
+                médio.
+            </p>
+            <p>
+                Esse projeto reforça como dados históricos bem tratados — mesmo em uma base relativamente simples —
+                revelam padrões estruturais (dominância, vantagem de mando de campo, evolução tática) que não são
+                óbvios à primeira vista, e é esse tipo de raciocínio analítico que pretendo aplicar em contextos de
+                negócio.
+            </p>
+        </section>
+ 
+        <a href="index.html" id="btn-back-bottom">
+            <ion-icon name="arrow-back-outline"></ion-icon>
+            <span>Voltar ao portfólio</span>
+        </a>
+ 
+    </main>
+ 
+    <script type="module" src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
