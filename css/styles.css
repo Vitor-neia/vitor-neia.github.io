@@ -49,6 +49,32 @@
 
 }
 
+/* Botão de idioma */
+#lang-toggle {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-size: 12px;
+  color: var(--main-color);
+  background-color: transparent;
+  border: 1px solid var(--main-color);
+  border-radius: 20px;
+  padding: 5px 12px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+#lang-toggle:hover {
+  background-color: var(--main-color);
+  color: var(--main-text-color);
+}
+
+#bio-container {
+  position: relative;
+}
+
 /* Bio container */
 #bio-container h2 {
   margin-bottom: 25px;
@@ -452,6 +478,24 @@
   color: var(--border-color);
 }
 
+/* Responsivo - Tablet (evita a bio-sidebar ficar espremida) */
+@media(max-width: 768px) {
+  #container {
+    flex-direction: column;
+  }
+
+  #bio-container {
+    flex: 1 1 auto;
+    min-height: auto;
+    border-right: none;
+    border-bottom: 5px solid var(--bio-border-color);
+  }
+
+  #about-container {
+    padding: 40px 30px;
+  }
+}
+
 /* Responsivo - Mobile */
 @media(max-width: 450px) {
   #container {
@@ -541,6 +585,13 @@ body.case-study-page {
   color: var(--main-text-color);
   background-color: var(--about-bg-color);
   min-height: 100vh;
+  position: relative;
+}
+
+#case-study-container #lang-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }
  
 #btn-back,
@@ -735,5 +786,25 @@ body.case-study-page {
  
   .case-stat {
     flex: 1 1 100%;
+  }
+}
+
+/* Acessibilidade */
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--main-color);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition-duration: 0.001ms !important;
+    animation-duration: 0.001ms !important;
+  }
+
+  .project-card:hover {
+    transform: none;
   }
 }
