@@ -5,14 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio Vitor Augusto Neias</title>
 
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="alternate icon" href="favicon.svg">
+    <meta name="description" content="Portfólio de Vitor Augusto Neias, graduando em Ciência de Dados (FATEC), com projetos de análise exploratória, SQL e dashboards em Power BI. Buscando oportunidade de estágio ou Júnior em Análise de Dados.">
+    <meta name="author" content="Vitor Augusto Neias">
+
+    <!-- Open Graph / Facebook / LinkedIn -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vitor-neia.github.io/">
+    <meta property="og:title" content="Vitor Augusto Neias | Analista e Cientista de Dados">
+    <meta property="og:description" content="Portfólio com projetos de análise exploratória, SQL e dashboards em Power BI. Graduando em Ciência de Dados (FATEC), buscando oportunidade de estágio ou Júnior.">
+    <meta property="og:image" content="https://vitor-neia.github.io/img/foto-perfil.jpeg">
+    <meta property="og:locale" content="pt_BR">
+ 
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Vitor Augusto Neias | Analista e Cientista de Dados">
+    <meta name="twitter:description" content="Portfólio com projetos de análise exploratória, SQL e dashboards em Power BI. Graduando em Ciência de Dados (FATEC), buscando oportunidade de estágio ou Júnior.">
+    <meta name="twitter:image" content="https://vitor-neia.github.io/img/foto-perfil.jpeg">
+ 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
+ 
     <!-- Dev Icon Fontes -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-
+ 
     <!-- Css do Projeto -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -26,15 +45,19 @@
             <p id="welcome-text">Seja bem-vindo!</p>
             <ul id="social-container">
                <li><a href="https://www.linkedin.com/in/vitor-augusto-neias-278a91210/" target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a></li>
-               <li><a href="https://github.com/Vitor-neia/" target="_blank"><i class="devicon-github-original"></i></a></li>
+                <li><a href="https://github.com/Vitor-neia" target="_blank"><i class="devicon-github-original github-icon"></i></a></li>
 
             </ul>
             <div id="email-container">
                 <ion-icon name="mail-outline"></ion-icon>
                 <a href="mailto:vitoraugustoneias@gmail.com">vitoraugustoneias@gmail.com</a>
             </div>
+            <a href="cv1/Curriculo_Vitor_Augusto_estagio.pdf" id="btn-download-cv" download>
+                <ion-icon name="download-outline"></ion-icon>
+                <span>Baixar CV</span>
+            </a>
         </aside>
-
+ 
         <section id="about-container">
             <h1 id="name">Vitor Augusto Neias</h1>
             <p id="title"><span class="highlight">Analista e Cientista de dados</span></p>
@@ -43,23 +66,111 @@
                 Estudante de Ciência de Dados com sólida base teórica e focado no desenvolvimento de soluções analíticas práticas. Utilizo ferramentas como SQL (PostgreSQL), Python, Power BI e Excel para extrair, tratar e transformar dados em insights visuais que apoiam a tomada de decisão.<br><br>
                 Mesmo sem experiência corporativa formal, possuo um portfólio consolidado de projetos analíticos que simulam desafios reais de mercado — aplicando técnicas de Análise Exploratória (EDA), limpeza de dados e modelagem financeira. Busco uma oportunidade de estágio ou posição inicial (Júnior) onde possa colaborar com a equipe, aprender rápido e gerar valor desde o primeiro dia.
             </p>
-
-            <a href="https://github.com/Vitor-neia" id="btn-projects">
+ 
+            <a href="https://github.com/Vitor-neia?tab=repositories" id="btn-projects">
                 <ion-icon name="share-social-outline"></ion-icon>
                 <span>Ver Projetos</span>
             </a>
+ 
+            <h2 id="projects-section" class="section-title">Meus Projetos</h2>
+            <p class="description">Alguns projetos práticos que desenvolvi aplicando análise exploratória, tratamento de dados e visualização:</p>
+ 
+            <div id="projects-container">
+ 
+                <article class="project-card">
+                    <img class="project-image" src="img/Analise_Mercado.PNG" alt="Dashboard de análise do mercado automotivo em Power BI">
+                    <img class="project-image" src="img/Precificação_Depreciação.PNG" alt="Dashboard de análise do mercado automotivo em Power BI">
+                    
+                    
 
+                    <div class="project-content">
+                        <h3 class="project-title">Análise do Mercado automotivo — Dashboard Power BI</h3>
+                        <p class="project-description">
+                            Este projeto demonstra a aplicação prática de linguagem SQL para engenharia de recursos, limpeza de dados (data cleaning) e extração de métricas de negócios a partir de um banco de dados automotivo complexo. Os gráficos e relatórios visuais foram acoplados apenas como um complemento de Business Intelligence para traduzir o resultado das consultas estruturadas em tomadas de decisão executiva.
+                        </p>
+                        <ul class="project-tags">
+                            <li>Power BI</li>
+                            <li>DAX</li>
+                            <li>Power Query</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://github.com/Vitor-neia/sql-mercado-automotivo" target="_blank" class="project-btn">
+                                <ion-icon name="logo-github"></ion-icon>
+                                <span>Ver Código</span>
+                            </a>
+                            <a href="https://app.powerbi.com/links/v_ogmy7plC?ctid=cf72e2bd-7a2b-4783-bdeb-39d57b07f76f&pbi_source=linkShare&bookmarkGuid=23900239-f506-45b2-8019-f3cd78fe69ca" target="_blank" class="project-btn project-btn-outline">
+                                <ion-icon name="bar-chart-outline"></ion-icon>
+                                <span>Ver Dashboard</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+ 
+                <article class="project-card">
+                    <img class="project-image" src="img/top_campeoes.png" alt="Análise exploratória de dados em Python">
+                     <img class="project-image" src="img/media_gols.png" alt="Análise exploratória de dados em Python">
+
+                    <div class="project-content">
+                        <h3 class="project-title">EDA — Análise Exploratória com Python</h3>
+                        <p class="project-description">
+                             Análise Exploratória de Dados (EDA) que abrange todos os dados históricos das Copas do Mundo da FIFA.
+                            Utilizei Python e suas bibliotecas para análise e visualização (Pandas, NumPy e Matplotlib) para analisar a fundo os dados de c Análise Exploratória de Dados (EDA) que abrange todos os dados históricos das Copas do Mundo da FIFA.
+                            Utilizei Python e suas bibliotecas para análise e visualização (Pandas, NumPy e Matplotlib) para analisar a fundo os dados de cada edição e identificar padrões.ada edição e identificar padrões.
+                        </p>
+                        <ul class="project-tags">
+                            <li>Python</li>
+                            <li>Pandas</li>
+                            <li>Matplotlib</li>
+                            
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://github.com/Vitor-neia/An-lise-Explorat-ria-sobre-Edi-es-de-Copas-do-Mundo" target="_blank" class="project-btn">
+                                <ion-icon name="logo-github"></ion-icon>
+                                <span>Ver Código</span>
+                            </a>
+                            <a href="study_case.html" class="project-btn project-btn-outline">
+                                <ion-icon name="document-text-outline"></ion-icon>
+                                <span>Estudo de Caso</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+ 
+                <article class="project-card">
+                    <img class="project-image" src="img/consulta sql.PNG" alt="Consultas SQL para análise de dados">
+                    
+                    <div class="project-content">
+                        <h3 class="project-title">Análise do Mercado Automotivo com  SQL</h3>
+                        <p class="project-description">
+                            Construção de consultas em SQLite com agregações e funções de janela para simular relatórios financeiros e responder perguntas de negócio.
+                        </p>
+                        <ul class="project-tags">
+                            <li>SQL</li>
+                            <li>SQLite</li>
+                            
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://github.com/Vitor-neia/sql-mercado-automotivo" target="_blank" class="project-btn">
+                                <ion-icon name="logo-github"></ion-icon>
+                                <span>Ver Código</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+ 
+            </div>
+ 
             <h2 id="skills-section-title">Minha Skills</h2>
             <p class="description">Conheça as tecnologias que domino:</p>
             <div id="skills-container">
                 <div class="skills-box">
                     <strong class="skills-title">Hard Skills</strong>
                     <i class="devicon-python-plain colored"></i>
-                    <i class="devicon-postgresql-plain colored"></i>
-                    <i class="devicon-microsoftsqlserver-plain colored"></i>
-                    <i class="devicon-mysql-plain colored"></i>
+                    <i class="devicon-sqlite-plain colored"></i>
                     <i class="devicon-git-plain colored"></i>
+                    
 
+             
                     <ul class="skills-list">
                         <li><strong>Python:</strong> Desenvolvimento de scripts analíticos utilizando bibliotecas como Pandas e NumPy para manipulação de grandes volumes de dados, e Matplotlib, Seaborn ou Plotly para visualizações dinâmicas e geração de gráficos.</li>
                         <li><strong>SQL & Bancos de Dados:</strong> Construção de consultas eficientes para extração e filtragem de dados utilizando PostgreSQL, MySQL e SQL Server, aplicando junções (JOINs), agregações (GROUP BY), subqueries e funções de janela.</li>
@@ -69,7 +180,7 @@
                 </div>
                 <div class="skills-box">
                     <p class="skills-title">Skills de Fundamento</p>
-
+ 
                     <ul class="skills-list">
                         <li><strong>Tratamento de Dados (Data Wrangling):</strong> Identificação e resolução de inconsistências, como registros duplicados, tratamento de valores ausentes (nulos) e conversão de tipos de variáveis para garantir a integridade da base.</li>
                         <li><strong>Análise Exploratória de Dados (EDA):</strong> Exploração inicial de novas bases de dados por meio de tabelas de frequência, cruzamento de variáveis e detecção de padrões ocultos ou anomalias (outliers) que direcionam os insights.</li>
@@ -78,11 +189,106 @@
                 </div>
             </div>
 
+              <h2 id="education-section-title" class="section-title">Formação &amp; Certificações</h2>
+            <p class="description">Minha trajetória acadêmica e cursos que complementam minha formação:</p>
+ 
+            <div id="education-container">
+ 
+                <div class="education-box">
+                    <h3 class="education-subtitle">Formação Acadêmica</h3>
+                    <ul class="education-list">
+                        <li class="education-item">
+                            <div class="education-item-header">
+                                <strong>Ciência de Dados</strong>
+                                <span class="education-status">Cursando</span>
+                            </div>
+                            <p class="education-institution">FATEC Ourinhos</p>
+                        </li>
+                    </ul>
+                </div>
+ 
+                <div class="education-box">
+                    <h3 class="education-subtitle">Cursos &amp; Certificações</h3>
+                    <ul class="certifications-grid">
+                        <li class="certification-badge">
+                            <ion-icon name="ribbon-outline"></ion-icon>
+                            <span>AWS General Immersion Day – Amazon Web Services (AWS), 2026</span>
+                            <p class="certification-provider">Plataforma: AWS</p>
+                        </li>
+                        <li class="certification-badge">
+                            <ion-icon name="ribbon-outline"></ion-icon>
+                            <span> SQL para Análise de Dados, Teo Me Why</span>
+                            <p class="certification-provider">Plataforma: YouTube</p>
+                        </li>
+                        <li class="certification-badge">
+                            <ion-icon name="ribbon-outline"></ion-icon>
+                            <span>Power BI Completo: Do Básico ao Avançado — João Paulo de Lira</span>
+                            <p class="certification-provider">Plataforma: Udemy</p>
+                        </li>
+                        <li class="certification-badge">
+                            <ion-icon name="ribbon-outline"></ion-icon>
+                            <span>Git e GitHub do Básico ao Avançado — Matheus Battisti / Hora de Codar</span>
+                            <p class="certification-provider">Plataforma: Udemy</p>
+                        </li>
+                        <li class="certification-badge">
+                            <ion-icon name="ribbon-outline"></ion-icon>
+                            <span>Curso de Python — Curso em Vídeo (Prof. Gustavo Guanabara)</span>
+                            <p class="certification-provider">Plataforma: YouTube</p>
+                        </li>
+                        <li class="certification-badge">
+                            <ion-icon name="ribbon-outline"></ion-icon>
+                            <span>Curso de Excel Completo: Do Básico ao Avançado — Nelio Alves</span>
+                            <p class="certification-provider">Plataforma: Udemy</p>
+                        </li>
+                        <li class="certification-badge">
+                            <ion-icon name="ribbon-outline"></ion-icon>
+                            <span>Python para Análise de Dados — Data V / Odemir Depieri Jr</span>
+                            <p class="certification-provider">Plataforma: Udemy</p>
+                        </li>
+
+                    </ul>
+                </div>
+ 
+            </div>
+ 
         </section>
-
+ 
     </main>
-
-    <script type="module" src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.esm.js"></script>
+ 
+     <script type="module" src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.js"></script>
+ 
+    <script>
+        (function () {
+            var STORAGE_KEY = 'portfolio-lang';
+            var toggleBtn = document.getElementById('lang-toggle');
+            var elements = document.querySelectorAll('[data-pt]');
+ 
+            function applyLanguage(lang) {
+                elements.forEach(function (el) {
+                    var text = el.getAttribute('data-' + lang);
+                    if (text !== null) {
+                        el.innerHTML = text;
+                    }
+                });
+                document.documentElement.setAttribute('lang', lang === 'en' ? 'en' : 'pt-BR');
+                if (toggleBtn) {
+                    toggleBtn.textContent = (lang === 'en') ? 'PT' : 'EN';
+                }
+                try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) { /* ignora se bloqueado */ }
+            }
+ 
+            var currentLang = 'pt';
+            try { currentLang = localStorage.getItem(STORAGE_KEY) || 'pt'; } catch (e) { /* ignora se bloqueado */ }
+            applyLanguage(currentLang);
+ 
+            if (toggleBtn) {
+                toggleBtn.addEventListener('click', function () {
+                    currentLang = (currentLang === 'pt') ? 'en' : 'pt';
+                    applyLanguage(currentLang);
+                });
+            }
+        })();
+    </script>
 </body>
 </html>
