@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfólio de Dados</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+[hidden] { display: none !important; }
+img { max-width: 100%; }
+body { margin: 0; }
+/* Layout: página única com grade de planilha. Hero em duas colunas (texto + foto), depois seções em tabelas e cartões. */
+:root {
+  --bg: #f2f5f4;
+  --surface: #ffffff;
+  --fg: #14201d;
+  --muted: #55655f;
+  --line: #d3dcd8;
+  --accent: #0b6e5a;
+  --accent-ink: #ffffff;
+  --accent-soft: #dcefe9;
+  --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e1513; --surface: #151f1c; --fg: #e6eeeb; --muted: #9bada6;
+    --line: #28362f; --accent: #4fd1a5; --accent-ink: #07231a; --accent-soft: #163a31;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0e1513; --surface: #151f1c; --fg: #e6eeeb; --muted: #9bada6;
+  --line: #28362f; --accent: #4fd1a5; --accent-ink: #07231a; --accent-soft: #163a31;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  padding-block: 0;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 48px 48px;
+  background-position: -1px -1px;
+  background-attachment: scroll;
+}
+.wrap { max-width: 1040px; margin: 0 auto; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+/* Aviso de modelo */
+.aviso {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  background: var(--accent-soft);
+  color: var(--fg);
+  border: 1px solid var(--accent);
+  padding: 8px 12px;
+  margin-top: 16px;
+}
+
+/* Navegação */
+.nav {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 5;
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 24px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+  padding-block: 12px;
+  margin-top: 16px;
+}
+.nav .marca { font-family: var(--font-mono); font-size: 13px; font-weight: 500; letter-spacing: .02em; }
+.nav ul { display: flex; flex-wrap: wrap; gap: 4px 20px; list-style: none; margin: 0; padding: 0; }
+.nav a { text-decoration: none; font-size: 14px; color: var(--muted); }
+.nav a:hover { color: var(--accent); }
+
+/* Hero */
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  gap: 40px;
+  align-items: center;
+  padding-block: 64px 56px;
+}
+.eyebrow {
+  font-family: var(--font-mono); font-size: 13px; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--accent); margin: 0 0 16px;
+}
+h1 {
+  font-family: var(--font-display); font-weight: 700;
+  font-size: clamp(2.4rem, 6vw, 4rem); line-height: 1.02; letter-spacing: -0.02em;
+  margin: 0 0 20px; text-wrap: balance;
+}
+.lead { font-size: 1.125rem; max-width: 58ch; margin: 0 0 28px; color: var(--fg); }
+.botoes { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-mono); font-size: 14px; font-weight: 500;
+  padding: 10px 16px; text-decoration: none;
+  border: 1px solid var(--fg); background: var(--surface); color: var(--fg);
+  transition: background .15s, color .15s, border-color .15s;
+}
+.btn:hover { background: var(--fg); color: var(--bg); }
+.btn.primario { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.btn.primario:hover { background: var(--fg); border-color: var(--fg); color: var(--bg); }
+
+/* Foto */
+.foto-box { justify-self: center; width: 100%; max-width: 320px; }
+.foto {
+  position: relative; display: block; width: 100%; aspect-ratio: 4 / 5;
+  background: var(--accent-soft); border: 1px solid var(--fg);
+  cursor: pointer; overflow: hidden; padding: 0;
+}
+.foto img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.foto .vazio {
+  position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
+  font-family: var(--font-mono); font-size: 13px; color: var(--muted); text-align: center; padding: 16px;
+}
+.foto .vazio strong { font-family: var(--font-display); font-size: 3.5rem; color: var(--accent); line-height: 1; }
+.foto::before, .foto::after {
+  content: ""; position: absolute; width: 18px; height: 18px; border: 2px solid var(--accent); z-index: 2; pointer-events: none;
+}
+.foto::before { top: 8px; left: 8px; border-right: 0; border-bottom: 0; }
+.foto::after { bottom: 8px; right: 8px; border-left: 0; border-top: 0; }
+.dica-foto { font-family: var(--font-mono); font-size: 12px; color: var(--muted); margin: 8px 0 0; }
+
+/* Seções */
+section { padding-block: 48px; border-top: 1px solid var(--line); }
+.sec-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 16px; margin-bottom: 28px; }
+h2 { font-family: var(--font-display); font-size: clamp(1.6rem, 3.5vw, 2.2rem); margin: 0; letter-spacing: -0.01em; text-wrap: balance; }
+.sec-head .sub { font-family: var(--font-mono); font-size: 13px; color: var(--muted); }
+
+.sobre { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 40px; }
+.sobre p { margin: 0 0 16px; max-width: 62ch; }
+.fatos { margin: 0; display: grid; gap: 0; border: 1px solid var(--line); background: var(--surface); align-self: start; }
+.fatos div { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 12px; padding: 10px 14px; border-bottom: 1px solid var(--line); }
+.fatos div:last-child { border-bottom: 0; }
+.fatos dt { font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); padding-top: 2px; }
+.fatos dd { margin: 0; font-size: 15px; }
+
+/* Tabelas */
+.tabela-wrap { overflow-x: auto; border: 1px solid var(--line); background: var(--surface); }
+table { width: 100%; border-collapse: collapse; font-size: 15px; min-width: 520px; }
+th, td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+tr:last-child td { border-bottom: 0; }
+th { font-family: var(--font-mono); font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); background: var(--bg); }
+td.num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.nivel { display: inline-flex; gap: 3px; vertical-align: middle; }
+.nivel i { width: 14px; height: 6px; background: var(--line); display: block; }
+.nivel i.on { background: var(--accent); }
+
+/* Projetos */
+.projetos { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 20px; }
+.proj { background: var(--surface); border: 1px solid var(--line); padding: 22px; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.proj h3 { font-family: var(--font-display); font-size: 1.3rem; line-height: 1.2; margin: 0; }
+.proj p { margin: 0; color: var(--muted); font-size: 15px; }
+.proj .resultado { font-family: var(--font-mono); font-size: 13px; color: var(--fg); background: var(--accent-soft); padding: 8px 10px; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; padding: 0; margin: 0; }
+.tags li { font-family: var(--font-mono); font-size: 12px; border: 1px solid var(--line); padding: 2px 8px; color: var(--muted); }
+.proj .links { margin-top: auto; display: flex; flex-wrap: wrap; gap: 8px 18px; font-family: var(--font-mono); font-size: 14px; }
+.proj .links a { color: var(--accent); font-weight: 500; }
+
+/* Contato */
+.contato { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 16px; }
+.canal { background: var(--surface); border: 1px solid var(--line); padding: 18px; min-width: 0; }
+.canal .rot { font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 0 0 6px; }
+.canal a { font-weight: 500; overflow-wrap: anywhere; color: var(--accent); }
+.canal span.txt { font-weight: 500; overflow-wrap: anywhere; user-select: all; }
+
+footer { border-top: 1px solid var(--line); padding-block: 28px 40px; font-family: var(--font-mono); font-size: 13px; color: var(--muted); }
+
+@media (max-width: 760px) {
+  .hero { grid-template-columns: 1fr; padding-block: 40px; }
+  .foto-box { order: -1; max-width: 240px; justify-self: start; }
+  .sobre { grid-template-columns: 1fr; gap: 28px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn { transition: none; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="aviso" id="aviso"></div>
+
+  <nav class="nav" aria-label="Seções">
+    <span class="marca" id="marca"></span>
+    <ul>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#habilidades">Habilidades</a></li>
+      <li><a href="#projetos">Projetos</a></li>
+      <li><a href="#cursos">Cursos</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <div>
+      <p class="eyebrow" id="cargo"></p>
+      <h1 id="nome"></h1>
+      <p class="lead" id="resumo"></p>
+      <div class="botoes">
+        <a class="btn primario" id="btn-linkedin" href="#" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a class="btn" id="btn-github" href="#" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </div>
+    <div class="foto-box">
+      <label class="foto" for="foto-input" id="foto" title="Clique para escolher sua foto">
+        <span class="vazio" id="foto-vazio"><strong id="iniciais">SN</strong>Clique para<br>escolher sua foto</span>
+        <img id="foto-img" alt="" hidden>
+      </label>
+      <input type="file" id="foto-input" accept="image/*" hidden>
+      <p class="dica-foto">Prévia local. No site publicado, use o arquivo da foto (veja FOTO_URL).</p>
+    </div>
+  </header>
+
+  <section id="sobre">
+    <div class="sec-head"><h2>Sobre mim</h2><span class="sub">resumo.txt</span></div>
+    <div class="sobre">
+      <div id="sobre-texto"></div>
+      <dl class="fatos" id="fatos"></dl>
+    </div>
+  </section>
+
+  <section id="habilidades">
+    <div class="sec-head"><h2>Habilidades</h2><span class="sub">SELECT * FROM habilidades</span></div>
+    <div class="tabela-wrap">
+      <table>
+        <thead><tr><th>Ferramenta</th><th>Nível</th><th>Onde usei</th></tr></thead>
+        <tbody id="skills"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="projetos">
+    <div class="sec-head"><h2>Projetos pessoais</h2><span class="sub"></span></div>
+    <div class="projetos" id="projetos-lista"></div>
+  </section>
+
+  <section id="cursos">
+    <div class="sec-head"><h2>Cursos e certificados</h2><span class="sub">formacao.csv</span></div>
+    <div class="tabela-wrap">
+      <table>
+        <thead><tr><th>Curso</th><th>Instituição</th><th>Carga</th><th>Ano</th></tr></thead>
+        <tbody id="cursos-lista"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="contato">
+    <div class="sec-head"><h2>Contato</h2><span class="sub">aberto a estágio e vaga júnior</span></div>
+    <div class="contato" id="contato-lista"></div>
+  </section>
+
+  <footer id="rodape"></footer>
+</div>
+
+<script>
+/* ============================================================
+   EDITE AQUI. Tudo que aparece na página vem deste bloco.
+   ============================================================ */
+const PERFIL = {
+  nome: "Vitor Augusto Neias",
+  cargo: "Dados · Estágio / Vaga júnior",
+  resumo: "Estudante de Ciência de Dados com foco em análise de dados. Gosto de transformar Base de dados confusas em respostas claras para quem precisa decidir.",
+  sobre: [
+    "Profissional em formação em Ciência de Dados com foco em Análise de Dados e Business Intelligence",
+    "Busco no momento um estágio ou vaga júnior em análise de dados, onde possa aplicar SQL, Python, PowerBI e aprender com um time."
+  ],
+  fatos: [
+    ["Local", "Jcarezinho, PR"],
+    ["Formação", "Ciência de Dados, Fatec-Ourinhos, Dez/28"],
+    ["Idiomas", "Português (nativo), Inglês (intermediário)"],
+    ["Busca", "Estágio ou vaga júnior em dados"]
+  ],
+  linkedin: "https://www.linkedin.com/in/vitor-augusto-neias-278a91210/",
+  github: "https://github.com/Vitor-neia",
+  email: "vitoraugustoneias@gmail.com",
+  /* Caminho da sua foto no site publicado, por exemplo "foto.jpg". Deixe "" para usar o seletor de prévia. */
+  FOTO_URL: "img/foto-perfil.jpeg",
+  habilidades: [
+    ["SQL", 3, "Consultas com JOIN, agregações e subconsultas nos projetos 1 "],
+    ["Python (Pandas)", 3, "Limpeza e análise exploratória de dados"],
+    ["Excel", 4, "Tabelas dinâmicas, fórmulas e painéis"],
+    ["Power BI", 3, "Dashboard de indicadores (projeto 1)"],
+    ["Git e GitHub", 2, "Versionamento dos meus projetos"],
+    ["Estatística básica", 3, "Média, mediana, correlação e testes de hipóteses"]
+  ],
+  projetos: [
+    {
+      titulo: "Análise de vendas de e-commerce",
+      texto: "Projeto em SQL para consultas de negócios em um banco de dados de vendas e-commerce. Os gráficos e relatórios visuais foram acoplados como um complemento de Business Intelligence para trazudir resultados e auxiliar nas tomadas de decisões.",
+      resultado: "Resultado: Transformação de dados transacionais brutos de e-commerce em diretrizes estratégicas de logística, marketing e produto, utilizando SQL.",
+      tags: ["Python", "SQL", "PowerBI"],
+      links: [["Ver código", "https://github.com/Vitor-neia/sql-ecommerce-sales"], ["Ver relatório", "https://app.powerbi.com/links/EKkMwvyfb7?ctid=cf72e2bd-7a2b-4783-bdeb-39d57b07f76f&pbi_source=linkShare"]]
+    },
+    {
+      titulo: "Análise de Desempenho e Indicadores - Itaú Unibanco (ITUB4)",
+      texto: "Este projeto é uma análise financeira aprofundada das ações do Itaú (ITUB4), estruturada para cobrir três pilares essenciais do mercado financeiro: Análise Técnica, Rentabilidade Comparada e Análise Fundamentalista.",
+      resultado: "Resultado: ITUB4 é uma operação de altíssima eficiência e previsibilidade contábil, mas a curto prazo foi mitigada pela renda fixa (CDI).",
+      tags: ["Python", "Numpy", "Seaborn", "Matplotlib", "Plotly", "Apis"],
+      links: [["Ver código", "https://github.com/Vitor-neia/Analise-itub4-macroeconomia"]]
+    },
+    {
+      titulo: "Análise Exploratória sobre Edições de Copas do Mundo",
+      texto: "Análise Exploratória sobre Edições de Campeonatos do Mundo Descrição do Projeto Este projeto apresenta uma Análise Exploratória de Dados (EDA) focada na história dos Campeonatos do Mundo de Futebol da FIFA (de 1930 a 2022).",
+      resultado: "Resultado: Maiores campeões, Seleções com mais finais perdidas, Evolução de gols, Média de Público por edição",
+      tags: ["Python", "Pandas", "Matplotlib", "Numpy"],
+      links: [["Ver código", "https://github.com/Vitor-neia/Analise-Exploratoria-sobre-Edi-oes-de-Copas-do-Mundo"]]
+    }
+  ],
+  cursos: [
+    ["Aprenda SQL para Análise de Dados", "Teo me Why", "30 h", "2026"],
+    ["Python para Análise de Dados", "Udemy", "17 h", "2025"],
+    ["Power BI do básico ao avançado", "Udemy", "10 h", "2026"],
+    ["Excel do Básico ao Avançado", "Udemy", "28,5 h", "2025"],
+    ["Git e GitHub do Básico ao Avançado", "Udemy", "9,5 h", "2026" ]
+  ]
+};
+/* ============================================================ */
+
+function h(tag, props, ...kids) {
+  const el = document.createElement(tag);
+  for (const k in (props || {})) {
+    if (k === "class") el.className = props[k];
+    else if (k === "text") el.textContent = props[k];
+    else el.setAttribute(k, props[k]);
+  }
+  kids.flat().forEach(c => { if (c != null) el.append(c.nodeType ? c : document.createTextNode(c)); });
+  return el;
+}
+const $ = id => document.getElementById(id);
+const ext = (a) => { a.target = "_blank"; a.rel = "noopener"; return a; };
+
+document.title = "Portfólio de " + PERFIL.nome.split(" ")[0];
+$("marca").textContent = PERFIL.nome.toLowerCase().replace(/\s+/g, ".") + " / dados";
+$("cargo").textContent = PERFIL.cargo;
+$("nome").textContent = PERFIL.nome;
+$("resumo").textContent = PERFIL.resumo;
+$("btn-linkedin").href = PERFIL.linkedin;
+$("btn-github").href = PERFIL.github;
+$("iniciais").textContent = PERFIL.nome.split(/\s+/).filter(Boolean).slice(0, 2).map(p => p[0].toUpperCase()).join("");
+
+PERFIL.sobre.forEach(t => $("sobre-texto").append(h("p", { text: t })));
+PERFIL.fatos.forEach(([k, v]) => $("fatos").append(h("div", null, h("dt", { text: k }), h("dd", { text: v }))));
+
+PERFIL.habilidades.forEach(([nome, nivel, uso]) => {
+  const barras = h("span", { class: "nivel", role: "img", "aria-label": "Nível " + nivel + " de 5" });
+  for (let i = 1; i <= 5; i++) barras.append(h("i", { class: i <= nivel ? "on" : "" }));
+  $("skills").append(h("tr", null, h("td", { text: nome }), h("td", null, barras), h("td", { text: uso })));
+});
+
+PERFIL.projetos.forEach(p => {
+  const links = h("div", { class: "links" });
+  p.links.forEach(([rot, url]) => links.append(ext(h("a", { href: url, text: rot + " ↗" }))));
+  $("projetos-lista").append(h("article", { class: "proj" },
+    h("h3", { text: p.titulo }),
+    h("p", { text: p.texto }),
+    h("div", { class: "resultado", text: p.resultado }),
+    h("ul", { class: "tags" }, p.tags.map(t => h("li", { text: t }))),
+    links));
+});
+
+PERFIL.cursos.forEach(([c, inst, carga, ano]) => {
+  $("cursos-lista").append(h("tr", null, h("td", { text: c }), h("td", { text: inst }), h("td", { class: "num", text: carga }), h("td", { class: "num", text: ano })));
+});
+
+$("contato-lista").append(
+  h("div", { class: "canal" }, h("p", { class: "rot", text: "LinkedIn" }), ext(h("a", { href: PERFIL.linkedin, text: PERFIL.linkedin.replace("https://www.", "") }))),
+  h("div", { class: "canal" }, h("p", { class: "rot", text: "GitHub" }), ext(h("a", { href: PERFIL.github, text: PERFIL.github.replace("https://", "") }))),
+  h("div", { class: "canal" }, h("p", { class: "rot", text: "E-mail" }), h("span", { class: "txt", text: PERFIL.email }))
+);
+$("rodape").textContent = "© " + new Date().getFullYear() + " " + PERFIL.nome + " · Feito com HTML e CSS";
+
+/* Foto: usa FOTO_URL se existir; senão, deixa escolher uma imagem para prévia */
+const img = $("foto-img"), vazio = $("foto-vazio");
+function mostrarFoto(src) { img.src = src; img.alt = "Foto de " + PERFIL.nome; img.hidden = false; vazio.hidden = true; }
+if (PERFIL.FOTO_URL) {
+  mostrarFoto(PERFIL.FOTO_URL);
+  $("foto-input").disabled = true;
+  document.querySelector(".dica-foto").hidden = true;
+} else {
+  try { const salva = localStorage.getItem("portfolio-foto"); if (salva) mostrarFoto(salva); } catch (e) {}
+  $("foto-input").addEventListener("change", ev => {
+    const arq = ev.target.files && ev.target.files[0];
+    if (!arq) return;
+    const leitor = new FileReader();
+    leitor.onload = () => {
+      const tmp = new Image();
+      tmp.onload = () => {
+        const w = 640, esc = Math.min(1, w / tmp.width);
+        const c = document.createElement("canvas");
+        c.width = Math.round(tmp.width * esc); c.height = Math.round(tmp.height * esc);
+        c.getContext("2d").drawImage(tmp, 0, 0, c.width, c.height);
+        const url = c.toDataURL("image/jpeg", 0.85);
+        mostrarFoto(url);
+        try { localStorage.setItem("portfolio-foto", url); } catch (e) {}
+      };
+      tmp.src = leitor.result;
+    };
+    leitor.readAsDataURL(arq);
+  });
+}
+</script>
+</body>
+</html>
